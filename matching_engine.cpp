@@ -8,6 +8,7 @@
 #include <winsock2.h>
 #include <windows.h>
 #include <algorithm>
+
 #pragma comment(lib, "ws2_32.lib")
 
 int chosenPort = 80;
@@ -28,7 +29,7 @@ struct Order {
             id = buyIDcount++;
         else if (type == 0)
             id = sellIDcount++;
-        timestamp = std::time(0);               // Timestamp assigned by system at the time of order placement
+        timestamp = std::time(0); // Timestamp assigned by system at the time of order placement
     }
 
     std::string to_string() const {
@@ -52,11 +53,11 @@ struct Trade {
 class OrderMatchingEngine {
 public:
     void addOrder(Order order) {
-        if (order.type == 1) {
+        if (order.type == 1)
             buyOrders.push_back(order);
-        } else if (order.type == 0) {
+        else if (order.type == 0)
             sellOrders.push_back(order);
-        }
+        
         matchOrders();
     }
 
