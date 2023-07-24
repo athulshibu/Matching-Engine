@@ -12,7 +12,7 @@
 
 int chosenPort = 80;
 int randomSeed = 227;
-int numOrders = 100;
+int numOrders = 4000;
 
 std::string createFormattedString(int a, int b, int c) {
     std::ostringstream oss;
